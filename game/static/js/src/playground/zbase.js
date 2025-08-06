@@ -1,10 +1,14 @@
 class XiaoxinGamePlayground{
     constructor(root) {
         this.root = root;
-        this.$playground = $(`<div>游戏界面</div>`);
+        this.$playground = $(`<div class="xiaoxin-game-playground"></div>`);
 
-        this.hide();
         this.root.$xiaoxin_game.append(this.$playground);
+        this.width = this.$playground.width();
+        this.height = this.$playground.height();
+        this.game_map = new GameMap(this);
+
+        // this.hide();
 
         this.start();
     }
